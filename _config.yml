@@ -1,0 +1,17 @@
+# Site settings
+name: Kardnote
+title: Kardnote - Daily note-taking with Markdown for Mac
+author: Dapeng Ni @ Edgenius
+email: hello@kardnote.com
+description: > # this means to ignore newlines until "baseurl:"
+  Kardnote aims to provide a daily note-taking tool with the power of Markdown. Kardnote has an intuitive rich text editing mode. In this mode, you even don't need to know what is Markdown.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.kardnote.com" # the base hostname & protocol for your site
+twitter_username: kardnote
+
+timezone: "Australia/Sydney"
+# Build settings
+markdown: kramdown
+copyright: Copyright © Edgenius 2016
+
+osx_app_store_url: "https://itunes.apple.com/us/app/textnut/id933104554?ls=1&mt=12"

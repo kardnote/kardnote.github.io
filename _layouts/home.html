@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body id="page-top" class="index">
+    <img src="img/header-bg.png" style="display:none">
+    <img src="img/mac_store_us.svg" style="display:none">
+    <header class="index top-header">
+      <nav class="navbar navbar-default navbar-fixed-top site-nav">
+        {% include home_nav.html %}
+      </nav>
+      <div class="container">
+          <div class="header-icon"><img src="img/icon-bk2.png"></div>
+      </div>
+
+   
+    </header>
+   
+    {{ content }}
+
+    {% include footer.html %}
+    <script type="text/javascript">
+     $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+  </body>
+
+</html>
