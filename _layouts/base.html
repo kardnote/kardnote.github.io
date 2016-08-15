@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <meta name="author" content="{{ site.author }}">
+  	<link rel="shortcut icon" type="image/png" href="{ "/img/favicon.png | prepend: site.baseurl }}"/>
+
+  	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ "/css/site-base.css" | prepend: site.baseurl }}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ "/font-awesome-4.1.0/css/font-awesome.min.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css">
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<header>
+    <div class="row" align="center">
+      	<nav class="nav nav-inline">
+	        <a class="nav-link" href="http://www.textnutwriter.com">
+	          <span>TextNut</span>
+	        </a>
+	        <span> | </span>
+	        <a class="nav-link" href="http://www.kardnote.com">
+	          <span>Kardnote</span>
+	        </a>
+	        <span> | </span>
+	        <a class="nav-link" href="http://community.kardnote.com">
+	          <span>Community</span>
+	        </a>
+      	</nav>
+    </div>
+</header>
+
+<div class="container main-content">
+{{ content }}
+</div>
+
+<footer class="site-footer">
+	<div class="container">
+	    <div class="row">
+	      <div class="col-md-4">
+	      {{ site.copyright }}
+	      </div>
+
+	      <div class="col-md-4">
+	       
+	      </div>
+
+	      <div class="col-md-4">
+	          <ul class="list-inline quicklinks">
+	          <!-- <li><a href="http://download.textnutwriter.com/PressKit.zip">Download Press Kit</a></li> -->
+	          {% comment %}http://stackoverflow.com/questions/25452429/excluding-page-from-jekyll-navigation-bar{% endcomment %}
+	          {% assign pages = site.pages | sort: 'weight' %} 
+	          {% for pg in pages %}          
+	            {% if pg.menu == 'footer' %}
+	              <li>
+	                 <a href="{{ pg.url | prepend: site.baseurl }}">{{ pg.title }}</a>
+	              </li>
+	            {% endif %}
+	          {% endfor %}
+	          </ul>
+	      </div>
+	  </div>
+	</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-55023970-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
