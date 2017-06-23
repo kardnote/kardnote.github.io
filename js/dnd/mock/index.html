@@ -1,0 +1,206 @@
+<html>
+  <head>
+    <style type="text/css">
+        .drag-select {
+            stroke:rgba(35,167,229,0.5);
+            stroke-width:0.5;
+            fill:rgba(35,215,229,0.5);
+            fill-opacity:0.5;
+        }
+        .selection .selectable {
+            outline-color: transparent !important;
+        }
+        .selectable {
+            cursor: move;
+            user-select: none;
+            outline: transparent dashed 1px;
+            transition: all 0.3s ease;
+        }
+        .selectable:hover {
+            outline-color: #999999; 
+        }
+        svg:not(:root) {
+            overflow:auto;
+        }
+        .svgwidget {
+            cursor:move;
+            outline: transparent dashed 1px;
+            transition: all 0.3s ease;
+        }
+        .svgwidget .frame {
+            stroke:rgba(35,167,229,0.5);
+            stroke-width:0.5;
+            fill:rgba(35,215,229,0.5);
+            fill-opacity:0.5;
+        }
+        .svgwidget .hovered .frame {
+            stroke:rgba(136,135,226,0.5);
+            stroke-width:0.5;
+            fill:rgba(125,142,226,0.5);
+            fill-opacity:0.5;
+        }
+        .svg_select_overlay {
+            fill: rgba(0,0,0,0.1);
+            cursor: move;
+        }
+        .svg_select_points_lt {
+            cursor:nw-resize;
+        }
+        .svg_select_points_rt {
+            cursor:ne-resize;
+        }
+        .svg_select_points_rb {
+            cursor:se-resize;
+        }
+        .svg_select_points_lb {
+            cursor:sw-resize;
+        }
+        .svg_select_points_t {
+            cursor:n-resize;
+        }
+        .svg_select_points_r {
+            cursor:e-resize;
+        }
+        .svg_select_points_b {
+            cursor:s-resize;
+        }
+        .svg_select_points_l {
+            cursor:w-resize;
+        }
+        .svg_select_points {
+            stroke-width:1;
+            stroke:#1485FE;
+            fill:#F9FFED;
+        }
+        .svg_select_points_point {
+            cursor:move;
+        }
+        .svg_select_boundingRect {
+            stroke-width:1;
+            fill:gray;
+            stroke-dasharray:2 2;
+            stroke:black;
+            stroke-opacity:0.8;
+            fill-opacity:0.1;
+            cursor:move;
+            /*pointer-events:none;*/
+        }
+        .svgwidget .separator {
+            stroke:rgba(255,97,89,0.5);
+            stroke-width:0.5;
+            fill:rgba(255,00,00,0.5);
+            fill-opacity:0.5;
+        }
+    </style></head>
+  
+  <body>
+    <svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 595 842" version="1.1" id="pdfSVG" width="100%" height="100%" xmlns:v-on="http://vuejs.org/vue" xmlns:v-bind="http://vuejs.org/vue" style="background: white;" xmlns:svgjs="http://svgjs.com/svgjs">
+      <g id="surface1">
+        <g clip-path="url(#clip1)" clip-rule="nonzero">
+          <path d="M 0 841.855469 L 595 841.855469 L 595 0 L 0 0 Z M 0 841.855469 " style="stroke: none; fill-rule: nonzero; fill: rgb(252, 252, 252); fill-opacity: 1;"></path>
+          <path d="M 1.99916 1.99916 L 791.000902 1.99916 L 791.000902 1119.998052 L 1.99916 1119.998052 Z M 1.99916 1.99916 " transform="matrix(0.750315,0,0,0.750315,0,0)" style="fill: none; stroke-width: 4; stroke-linecap: butt; stroke-linejoin: miter; stroke: rgb(255, 0, 0); stroke-opacity: 1; stroke-miterlimit: 4;"></path>
+        </g>
+      </g>
+      <!-- single shape, suppose only 2 ways resizable -->
+      <g class="selectable">
+        <g id="sid3" transform="translate(0, 0)" class="svgwidget svgwidget-sid3" style="color: rgb(255, 255, 255);">
+          <g transform="translate(103.5501708984375, 27.942108154296875)" id="sid3-1" class="component">
+            <g>
+              <rect width="220" height="16" class="frame" x="-58" y="0"></rect>
+              <text x="6" y="12" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">Sample Text</text></g>
+          </g>
+        </g>
+      </g>
+      <!-- single shape, suppose 8 ways resizable -->
+      <g class="selectable">
+        <g id="sid5" transform="translate(0, 0)" class="svgwidget svgwidget-sid5" style="color: rgb(255, 255, 255);">
+          <g transform="translate(50.131446838378906, 68.21161651611328)" id="sid5-1" class="component">
+            <g>
+              <rect width="200" height="80" class="frame"></rect>
+              <text x="6" y="12" class="displaytext" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">
+                <tspan x="0" dy="0">Multiple lines text</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+      <!-- single shape, suppose 4 ways resizable -->
+      <g class="selectable">
+        <g id="sid7" transform="translate(0, 0)" class="svgwidget svgwidget-sid7" style="color: rgb(255, 255, 255);">
+          <!---->
+          <g transform="translate(59.17152404785156, 221.89321899414062)" id="sid7-1" class="component">
+            <g>
+              <rect width="16" height="16" class="frame"></rect>
+              <text x="6" y="12" style="font-size: 12px; fill: rgb(0, 0, 0);">x</text>
+              <!---->
+              <!----></g>
+          </g>
+        </g>
+      </g>
+      <!-- single shape, with 2 horizontal slider and external rect is selected -->
+      <g class="selectable">
+        <g id="sid3" transform="translate(0, 0)" class="svgwidget svgwidget-sid3" style="color: rgb(255, 255, 255);">
+          <g transform="matrix(1,0,0,1,105.85974884033203,198.1593017578125)" id="sid3-1" class="selectable-group component hovered">
+            <g>
+              <rect width="181" height="16" class="frame"></rect>
+              <!---->
+              <text x="0" y="12"   class="selectable restricted" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">##</text>
+              <!---->
+              <!---->
+              <g transform="translate(17.796875, 0)">
+                <rect width="4.4453125" height="16" class="separator"></rect>
+                <text x="0" y="12" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">:</text></g>
+              <text x="22.2421875" y="12" class="selectable restricted" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">##</text>
+              <!---->
+              <!---->
+              <g transform="translate(40.0390625, 0)">
+                <rect width="4.4453125" height="16" class="separator"></rect>
+                <text x="0" y="12"  style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">:</text></g>
+              <text x="44.484375"  y="12" class="selectable restricted" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">##</text>
+              <!---->
+              <!--<g id="SvgjsG1089" transform="matrix(1,0,0,1,0,0)">
+                <rect id="SvgjsRect1090" width="181" height="16" class="svg_select_boundingRect svg_select_points"></rect>
+                <circle id="SvgjsCircle1091" r="3" cx="0" cy="0" class="svg_select_points_lt svg_select_points"></circle>
+                <circle id="SvgjsCircle1092" r="3" cx="181" cy="0" class="svg_select_points_rt svg_select_points"></circle>
+                <circle id="SvgjsCircle1093" r="3" cx="181" cy="16" class="svg_select_points_rb svg_select_points"></circle>
+                <circle id="SvgjsCircle1094" r="3" cx="0" cy="16" class="svg_select_points_lb svg_select_points"></circle>
+                <circle id="SvgjsCircle1095" r="3" cx="90.5" cy="0" class="svg_select_points_t svg_select_points"></circle>
+                <circle id="SvgjsCircle1096" r="3" cx="181" cy="8" class="svg_select_points_r svg_select_points"></circle>
+                <circle id="SvgjsCircle1097" r="3" cx="90.5" cy="16" class="svg_select_points_b svg_select_points"></circle>
+                <circle id="SvgjsCircle1098" r="3" cx="0" cy="8" class="svg_select_points_l svg_select_points"></circle>
+              </g>-->
+            </g>
+          </g>
+        </g>
+      </g>
+      <!-- group element with 3 shapes -->
+      <g class="selectable-group">
+        <g id="sid4" transform="translate(0, 0)" class="svgwidget svgwidget-sid4" style="color: rgb(255, 255, 255);">
+          <g transform="translate(101.08468627929688, 299.1449337005615)" id="sid4-1" class="component selectable">
+            <g>
+              <rect width="100" height="16" class="frame"></rect>
+              <text x="6" y="12" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">Item 1</text></g>
+          </g>
+          <g transform="translate(101.90650177001953, 371.4656581878662)" id="sid4-2" class="component selectable">
+            <g>
+              <rect width="100" height="16" class="frame"></rect>
+              <text x="6" y="12" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">Item 2</text></g>
+          </g>
+          <g transform="translate(101.08467864990234, 335.3052906990051)" id="sid4-3" class="component selectable">
+            <g>
+              <rect width="100" height="16" class="frame"></rect>
+              <text x="6" y="12" style="font-family: Helvetica; font-size: 12px; fill: rgb(0, 0, 0);">Item 3</text></g>
+          </g>
+        </g>
+      </g>
+      <defs>
+        <clipPath id="clip1">
+          <path d="M 0 0 L 595 0 L 595 841.855469 L 0 841.855469 Z M 0 0 "></path>
+        </clipPath>
+      </defs>
+    </svg>
+    <!-- <script type="text/javascript" src="mock/socket.js"></script> -->
+    <script type="text/javascript" src="../dist/svgdnd.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+
+</html>
